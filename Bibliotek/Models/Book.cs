@@ -13,13 +13,13 @@ namespace Library.Models
         public string ISBN { get; set; }
         [Display(Name = "Titel")]
         public string  Title { get; set; }
-        [Display(Name = "Författare")]
+        [Display(Name = "Author")]
         [Required]
         public int AuthorID { get; set; }
         public Author Author { get; set; }
-        [Display(Name="Beskrivning")]
+        [Display(Name="Description")]
         public string Description { get; set; }
-        [Display(Name ="Kopior")]
+        [Display(Name ="Copies")]
         public ICollection<BookCopy> BookCopeis { get; set; }
     }
 }
