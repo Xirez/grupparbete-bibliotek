@@ -30,5 +30,20 @@ namespace Library.Services
                    Value = x.ID.ToString()
                });
         }
+
+        public void Add(Author author)
+        {
+            _context.Add(author);
+            _context.SaveChanges();
+        }
+
+        public void Delete(int id)
+        {
+            var author = _context.Authors.Find(id);
+            _context.Authors.Remove(author);
+            _context.SaveChanges();
+        }
+
+
     }
 }

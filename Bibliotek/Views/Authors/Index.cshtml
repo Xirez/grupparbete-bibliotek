@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Bibliotek.Models.ViewModels.AuthorIndex
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Authors</h2>
+
+<a asp-action="Create" class="btn btn-primary">Add Authors</a>
+
+<form asp-action="FilterOnAuthor" class="form-inline">
+    <div class="form-group">
+        <label asp-for="@Model.Author" class="control-label">Show books by author</label>
+        <select asp-for="@Model.Author.ID" asp-items="@Model.Authors" class="form-control"></select>
+        <button type="submit" class="btn btn-primary">Show</button>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Authors == null)
+        {
+        <tr>
+            <td>
+                <span>no authors found</span>
+            </td>
+        </tr>
+        }
+        else
+        {
+        @foreach (var item in Model.Authors)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Text)
+                    </td>
+                    <td>
+                        @{ int id = Convert.ToInt16(item.Value);}
+                        <a asp-action="Delete" asp-route-id="@id">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
