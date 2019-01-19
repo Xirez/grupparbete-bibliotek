@@ -20,6 +20,6 @@ namespace Library.Models
         [Display(Name="Beskrivning")]
         public string Description { get; set; }
         [Display(Name ="Kopior")]
-        public ICollection<BookCopy> BookCopeis { get; set; }
+        public ICollection<BookCopy> BookCopeis { get; set; } //!!!COPEIS!!!
     }
 }

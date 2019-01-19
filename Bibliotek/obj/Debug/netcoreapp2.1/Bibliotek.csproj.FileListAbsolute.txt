@@ -97,3 +97,36 @@ C:\Users\Andreas\BibliotekProjekt\grupparbete-bibliotek\Bibliotek\obj\Debug\netc
 C:\Users\Andreas\BibliotekProjekt\grupparbete-bibliotek\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.dll
 C:\Users\Andreas\BibliotekProjekt\grupparbete-bibliotek\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.pdb
 C:\Users\Andreas\BibliotekProjekt\grupparbete-bibliotek\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.csproj.CopyComplete
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\bin\Debug\netcoreapp2.1\Bibliotek.deps.json
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\bin\Debug\netcoreapp2.1\Bibliotek.runtimeconfig.json
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\bin\Debug\netcoreapp2.1\Bibliotek.runtimeconfig.dev.json
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\bin\Debug\netcoreapp2.1\Bibliotek.dll
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\bin\Debug\netcoreapp2.1\Bibliotek.pdb
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\bin\Debug\netcoreapp2.1\Bibliotek.Views.dll
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\bin\Debug\netcoreapp2.1\Bibliotek.Views.pdb
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.csproj.CoreCompileInputs.cache
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.RazorAssemblyInfo.cache
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.RazorAssemblyInfo.cs
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.AssemblyInfoInputs.cache
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.AssemblyInfo.cs
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.TagHelpers.input.cache
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.TagHelpers.output.cache
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.RazorCoreGenerate.cache
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Razor\Views\Books\Create.g.cshtml.cs
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Razor\Views\Books\Delete.g.cshtml.cs
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Razor\Views\Books\Details.g.cshtml.cs
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Razor\Views\Books\Edit.g.cshtml.cs
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Razor\Views\Books\Index.g.cshtml.cs
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.RazorTargetAssemblyInfo.cache
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.RazorTargetAssemblyInfo.cs
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.Views.pdb
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.dll
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.pdb
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Bibliotek.csproj.CopyComplete
+C:\Users\Robin\Dropbox\Programmering\TUC Plugg\C# Fördjupning\Grupparbete\Bibliotek\obj\Debug\netcoreapp2.1\Razor\Views\Members\Index.g.cshtml.cs
