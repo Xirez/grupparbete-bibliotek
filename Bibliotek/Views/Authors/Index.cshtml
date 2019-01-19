@@ -10,13 +10,14 @@
 
 <a asp-action="Create" class="btn btn-primary">Add Authors</a>
 
-<form asp-action="FilterOnAuthor" class="form-inline">
+<form asp-action="FilterOnAuthor" asp-route-author="@Model.Author" class="form-inline">
     <div class="form-group">
         <label asp-for="@Model.Author" class="control-label">Show books by author</label>
         <select asp-for="@Model.Author.ID" asp-items="@Model.Authors" class="form-control"></select>
         <button type="submit" class="btn btn-primary">Show</button>
     </div>
 </form>
+
 
 <table class="table">
     <thead>

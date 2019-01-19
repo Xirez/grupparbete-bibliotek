@@ -44,6 +44,31 @@ namespace Library.Services
             _context.SaveChanges();
         }
 
+        public string GetFirstnameByID(int id)
+        {
+            var author = _context.Authors.Find(id);
+            var firstname = author.FirstName;
+
+            return firstname;
+        }
+
+        public string GetLastnameByID(int id)
+        {
+            var author = _context.Authors.Find(id);
+            var lastname = author.LastName;
+
+            return lastname;
+        }
+
+
+        public ICollection<Book> GetAuthorBooksByID(int id)
+        {
+            var author = _context.Authors.Find(id);
+            var authorBooks = author.AuthorBooks;
+
+            return authorBooks;
+        }
+
 
     }
 }

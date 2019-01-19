@@ -15,5 +15,11 @@ namespace Library.Services.Interfaces
         void Add(Author author);
 
         void Delete(int id);
+
+        string GetLastnameByID(int id);
+
+        string GetFirstnameByID(int id);
+
+        ICollection<Book> GetAuthorBooksByID(int id);
     }
 }

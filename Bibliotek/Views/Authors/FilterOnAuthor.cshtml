@@ -1,8 +1,40 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model Library.Models.Author
 @{
-    ViewData["Title"] = "FilterOnAuthor";
+    ViewData["Title"] = "Index";
 }
 
-<h2>Showing books by </h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <p>Showing books by @Model.FullName</p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.AuthorBooks == null)
+        {
+            <tr>
+                <td>
+                    <span>no books found</span>
+                </td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var item in Model.AuthorBooks)
+            {
+                <tr>
+                    <td>
+                        @item.Title
+                    </td>
+                   
+                </tr>
+            }
+        }
+    </tbody>
+</table>

@@ -14,10 +14,12 @@ namespace Bibliotek.Controllers
     public class AuthorsController : Controller
     {
         private readonly IAuthorService _authorService;
+        private readonly IBookService _bookService;
 
         public AuthorsController(IAuthorService authorService)
         {
             this._authorService = authorService;
+
         }
 
         public IActionResult Index()
@@ -62,9 +64,17 @@ namespace Bibliotek.Controllers
             return View("Index",vm);
         }
 
-        public IActionResult FilterOnAuthor()
+        public IActionResult FilterOnAuthor(Author author)
         {
-            return View();
+           var firstname = _authorService.GetFirstnameByID(author.ID);
+           var lastname = _authorService.GetLastnameByID(author.ID);
+           var authorBooks = _authorService.GetAuthorBooksByID(author.ID);
+
+            author.FirstName = firstname;
+            author.LastName = lastname;
+            author.AuthorBooks = authorBooks;
+
+            return View(author);
         }
     }
 }
