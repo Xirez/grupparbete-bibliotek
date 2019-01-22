@@ -11800,11 +11800,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andreas\\BibliotekProjekt\\grupparbete-bibliotek\\Bibliotek\\Bibliotek.csproj",
+      "projectUniqueName": "C:\\Users\\Andreas\\BibliotekProjekt\\grupparbete-bibliotek\\grupparbete-bibliotek\\grupparbete-bibliotek\\Bibliotek\\Bibliotek.csproj",
       "projectName": "Bibliotek",
-      "projectPath": "C:\\Users\\Andreas\\BibliotekProjekt\\grupparbete-bibliotek\\Bibliotek\\Bibliotek.csproj",
+      "projectPath": "C:\\Users\\Andreas\\BibliotekProjekt\\grupparbete-bibliotek\\grupparbete-bibliotek\\grupparbete-bibliotek\\Bibliotek\\Bibliotek.csproj",
       "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andreas\\BibliotekProjekt\\grupparbete-bibliotek\\Bibliotek\\obj\\",
+      "outputPath": "C:\\Users\\Andreas\\BibliotekProjekt\\grupparbete-bibliotek\\grupparbete-bibliotek\\grupparbete-bibliotek\\Bibliotek\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
