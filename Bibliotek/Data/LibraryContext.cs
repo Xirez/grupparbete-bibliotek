@@ -28,20 +28,10 @@ namespace Library.Data
                     LastName = "Shakespeare"
                 }
             );
-
-	        modelBuilder.Entity<Author>().HasData(
-                new Author
-                {
-                    ID = 2,
-                    FirstName = "Napolean",
-                    LastName = "Hill"
-                }
-            );
             modelBuilder.Entity<Book>().HasData(
                 new Book { ID = 1, AuthorID = 1, Title = "Hamlet", ISBN = "1472518381", Description = "Arguably Shakespeare's greatest tragedy" },
                 new Book { ID = 2, AuthorID = 1, Title = "King Lear", ISBN = "9780141012292", Description = "King Lear is a tragedy written by William Shakespeare. It depicts the gradual descent into madness of the title character, after he disposes of his kingdom by giving bequests to two of his three daughters egged on by their continual flattery, bringing tragic consequences for all." },
-                new Book { ID = 3, AuthorID = 1, Title = "Othello", ISBN = "1853260185", Description = "An intense drama of love, deception, jealousy and destruction." },
-                new Book { ID = 4, AuthorID = 2, Title = "The Law Of Succes", ISBN = "1853264125", Description = "This book has changed countless lives and it can change yours!" }
+                new Book { ID = 3, AuthorID = 1, Title = "Othello", ISBN = "1853260185", Description = "An intense drama of love, deception, jealousy and destruction." }
             );
         }
 
@@ -49,6 +39,7 @@ namespace Library.Data
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<BookCopy> BookCopies { get; set; }
+        public DbSet<Member> Members { get; set; }
 
     }
 }

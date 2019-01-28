@@ -5,116 +5,152 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 
 namespace Library.Services
 {
-    public class BookService : IBookService
-    {
-        private readonly LibraryContext _context;
+	public class BookService : IBookService
+	{
+		private readonly LibraryContext _context;
 
-        public BookService(LibraryContext context)
-        {
-            this._context = context;
-        }
+		public BookService(LibraryContext context)
+		{
+			this._context = context;
+		}
 
-        /// <summary>
-        /// Hämtar alla böcker
-        /// </summary>
-        /// <returns>en lista av alla böcker</returns>
-        public IList<Book> GetAll()
-        {
-            return _context.Books
-                .Include("Author")
-                .Include(x => x.BookCopeis)
-                .ToList();
-        }
+		/// <summary>
+		/// Hämtar alla böcker
+		/// </summary>
+		/// <returns>en lista av alla böcker</returns>
+		public IList<Book> GetAll()
+		{
+			return _context.Books
+				.Include("Author")
+				.Include(x => x.BookCopeis)
+				.ToList();
+		}
 
-        /// <summary>
-        /// Hämtar alla böcker som är tillgängliga
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<Book> GetAvailable()
-        {
-            return _context.Books
-                .Include("Author")
-                .Include(x => x.BookCopeis)
-                .ToList()
-                .Where(x => IsAvailable(x));
-        }
+		/// <summary>
+		/// Hämtar alla böcker som är tillgängliga
+		/// </summary>
+		/// <returns></returns>
+		public IEnumerable<Book> GetAvailable()
+		{
+			return _context.Books
+				.Include("Author")
+				.Include(x => x.BookCopeis)
+				.ToList()
+				.Where(x => IsAvailable(x));
+		}
 
-        /// <summary>
-        /// Hämtar alla böcker från angiven författare
-        /// </summary>
-        /// <param name="author">Författare vars böcker ska hämtas</param>
-        /// <returns></returns>
-        public IEnumerable<Book> GetAllByAuthor(Author author)
-        {
-            throw new NotImplementedException();
-        }
+		/// <summary>
+		/// Hämtar alla böcker från angiven författare
+		/// </summary>
+		/// <param name="author">Författare vars böcker ska hämtas</param>
+		/// <returns></returns>
+		public IEnumerable<Book> GetAllByAuthor(Author author)
+		{
+			var a = from book in _context.Books
+					where book.Author == author
+					select book;
 
-        /// <summary>
-        /// Hämtar en bok utifrån dess ID
-        /// </summary>
-        /// <param name="id">ID på boken som ska hämtas</param>
-        /// <returns></returns>
-        public Book Get(int? id)
-        {
-            return _context.Books.FirstOrDefault(m => m.ID == id);
-        }
+			return a.Include("BookCopeis").Include("Author").ToList();
 
-        /// <summary>
-        /// Lägger till en bok
-        /// </summary>
-        /// <param name="book">Boken som ska läggas till</param>
-        public void Add(Book book)
-        {
-            book.Author = _context.Authors.Find(book.Author.ID);
-            _context.Add(book);
-            _context.SaveChanges();
-        }
+			//throw new NotImplementedException();
+		}
 
-        /// <summary>
-        /// Uppdaterar en bok
-        /// </summary>
-        /// <param name="book">Boken som ska uppdateras</param>
-        public void Update(Book book)
-        {
-            _context.Update(book);
-            _context.SaveChanges();
-        }
+		/// <summary>
+		/// Hämtar en bok utifrån dess ID
+		/// </summary>
+		/// <param name="id">ID på boken som ska hämtas</param>
+		/// <returns></returns>
+		public Book Get(int? id)
+		{
+			return _context.Books.FirstOrDefault(m => m.ID == id);
+		}
 
-        /// <summary>
-        /// Tar bort alla exemplar av boken sen tas även bokenbort givet dess ID
-        /// </summary>
-        /// <param name="id">ID på boken som ska tas bort</param>
-        public void Delete(int id)
-        {
-            var book = _context.Books.Find(id);
-            var bookCopies = _context.BookCopies
-                .Where(x => x.Book == book);
-            _context.BookCopies.RemoveRange(bookCopies);
-            _context.Books.Remove(book);
-            _context.SaveChanges();
-        }
+		/// <summary>
+		/// Lägger till en bok
+		/// </summary>
+		/// <param name="book">Boken som ska läggas till</param>
+		public void Add(Book book)
+		{
+			book.Author = _context.Authors.Find(book.Author.ID);
+			_context.Add(book);
+			_context.SaveChanges();
+		}
 
-        /// <summary>
-        /// Kollar om boken i fråga är tillgänlig eller ej
-        /// </summary>
-        /// <param name="book">boken i fråga</param>
-        /// <returns>true om boken finns tillgänglig</returns>
-        public bool IsAvailable(Book book)
-        {
-            throw new NotImplementedException();
-        }
+		/// <summary>
+		/// Uppdaterar en bok
+		/// </summary>
+		/// <param name="book">Boken som ska uppdateras</param>
+		public void Update(Book book)
+		{
+			_context.Update(book);
+			_context.SaveChanges();
+		}
 
-        /// <summary>
-        /// Kollar om boken finns eller ej
-        /// </summary>
-        /// <param name="id">bokens ID</param>
-        /// <returns>true om boken finns</returns>
-        public bool BookExists(int id)
-        {
-            return _context.Books.Any(e => e.ID == id);
-        }
-    }
+		/// <summary>
+		/// Tar bort alla exemplar av boken sen tas även bokenbort givet dess ID
+		/// </summary>
+		/// <param name="id">ID på boken som ska tas bort</param>
+		public void Delete(int id)
+		{
+			var book = _context.Books.Find(id);
+			var bookCopies = _context.BookCopies
+				.Where(x => x.Book == book);
+			_context.BookCopies.RemoveRange(bookCopies);
+			_context.Books.Remove(book);
+			_context.SaveChanges();
+		}
+
+		/// <summary>
+		/// Kollar om boken i fråga är tillgänlig eller ej
+		/// </summary>
+		/// <param name="book">boken i fråga</param>
+		/// <returns>true om boken finns tillgänglig</returns>
+		public bool IsAvailable(Book book)
+		{
+			throw new NotImplementedException();
+		}
+
+		/// <summary>
+		/// Kollar om boken finns eller ej
+		/// </summary>
+		/// <param name="id">bokens ID</param>
+		/// <returns>true om boken finns</returns>
+		public bool BookExists(int id)
+		{
+			return _context.Books.Any(e => e.ID == id);
+		}
+
+		public void UpdateCopies(int id, int antal)
+		{
+			var allBooksCopies = _context.BookCopies.Where(x => x.BookID == id);
+
+			foreach (var booksCopies in allBooksCopies)
+			{
+				_context.BookCopies.Remove(booksCopies);
+			}
+
+			for (int i = 0; i < antal; i++)
+			{
+				_context.BookCopies.Add(new BookCopy() { BookID = id });
+			}
+
+			_context.SaveChanges();
+		}
+
+		public void AddCopies(int id, int antal)
+		{
+			for (int i = 0; i < antal; i++)
+			{
+				_context.BookCopies.Add(new BookCopy() { BookID = id });
+			}
+
+			_context.SaveChanges();
+		}
+	}
 }

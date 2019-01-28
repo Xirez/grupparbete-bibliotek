@@ -54,5 +54,7 @@ namespace Library.Services.Interfaces
         /// </summary>
         /// <param name="book">Boken som ska uppdateras</param>
         void Update(Book book);
+		void AddCopies(int iD, int numberOfCopiesToAdd);
+	    void UpdateCopies(int iD, int UpdateBookCopies);
     }
 }

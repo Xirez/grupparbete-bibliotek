@@ -7,9 +7,9 @@ namespace Library.Models
     {
         [Key]
         public int ID { get; set; }
-        [Display(Name = "First name")]
+        [Display(Name = "Förnamn")]
         public string FirstName { get; set; }
-        [Display(Name = "Last name")]
+        [Display(Name = "Efternamn")]
         public string LastName { get; set; }
         public virtual ICollection<Book> AuthorBooks { get; set; }
 

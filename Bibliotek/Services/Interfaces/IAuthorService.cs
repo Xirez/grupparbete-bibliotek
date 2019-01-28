@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Library.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Library.Services.Interfaces
@@ -10,5 +11,15 @@ namespace Library.Services.Interfaces
         /// </summary>
         /// <returns></returns>
         IEnumerable<SelectListItem> GetSelectListItems();
-    }
+
+	    //void Add(Author author);
+
+	    //void Delete(int id);
+
+	    //string GetLastnameByID(int id);
+
+	    //string GetFirstnameByID(int id);
+
+	    //ICollection<Book> GetAuthorBooksByID(int id);
+	}
 }

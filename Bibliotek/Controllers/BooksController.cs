@@ -10,6 +10,7 @@ using Library.Models;
 using Library.Services;
 using Library.Models.ViewModels;
 using Library.Services.Interfaces;
+using Bibliotek.Models.ViewModels;
 
 namespace Library.Controllers
 {
@@ -90,8 +91,10 @@ namespace Library.Controllers
         /// <returns></returns>
         public IActionResult Create()
         {
+			var vm = new CreateBookVM();
+	        vm.NumberOfCopiesToAdd = 1;
             ViewBag.Authors = _authorService.GetSelectListItems();
-            return View();
+            return View(vm);
         }
 
         /// <summary>
@@ -101,14 +104,15 @@ namespace Library.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Book book)
+        public IActionResult Create(CreateBookVM vm)
         {
             if (ModelState.IsValid)
             {
-                _bookService.Add(book);
+                _bookService.Add(vm.Book);
+	            _bookService.AddCopies(vm.Book.ID, vm.NumberOfCopiesToAdd);
                 return RedirectToAction(nameof(Index));
             }
-            return View(book);
+            return View(vm);
         }
 
         /// <summary>
@@ -118,14 +122,16 @@ namespace Library.Controllers
         /// <returns></returns>
         public IActionResult Edit(int id)
         {
-
+			var vm = new CreateBookVM();
             var book = _bookService.Get(id);
             if (book == null)
             {
                 return NotFound();
             }
-            return View(book);
-        }
+
+	        vm.Book = book;
+            return View(vm);
+        } 
 
         /// <summary>
         /// Ändrar på en bok
@@ -135,19 +141,22 @@ namespace Library.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, Book book)
+        public IActionResult Edit(int id, CreateBookVM vm)
         {
             if (ModelState.IsValid)
             {
                
                 try
                 {
-                    _bookService.Update(book);
+	                //vm.NumberOfCopiesToAdd
+					_bookService.AddCopies(vm.Book.ID,vm.NumberOfCopiesToAdd);
+	                var bookToUpdate = _bookService.Get(vm.Book.ID);
+                    _bookService.Update(bookToUpdate);
                     return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (_bookService.BookExists(book.ID))
+                    if (_bookService.BookExists(vm.Book.ID))
                     {
                         return NotFound();
                     }
@@ -157,7 +166,7 @@ namespace Library.Controllers
                     }
                 }
             }
-            return View(book);
+            return View(vm);
         }
 
         /// <summary>

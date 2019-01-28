@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Bibliotek.Models.ViewModels;
 
 namespace Library.Models
 {
@@ -13,13 +14,15 @@ namespace Library.Models
         public string ISBN { get; set; }
         [Display(Name = "Titel")]
         public string  Title { get; set; }
-        [Display(Name = "Author")]
+        [Display(Name = "Författare")]
         [Required]
         public int AuthorID { get; set; }
         public Author Author { get; set; }
-        [Display(Name="Description")]
+        [Display(Name="Beskrivning")]
         public string Description { get; set; }
-        [Display(Name ="Copies")]
-        public ICollection<BookCopy> BookCopeis { get; set; }
+
+	   
+		[Display(Name ="Kopior")]
+        public ICollection<BookCopy> BookCopeis { get; set; } //!!!COPEIS!!!
     }
 }

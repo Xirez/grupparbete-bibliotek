@@ -12,5 +12,6 @@ namespace Library.Models.ViewModels
         public IEnumerable<SelectListItem> Authors { get; set; }
 
         public Author Author { get; set; } = new Author();
-    }
+
+	}
 }

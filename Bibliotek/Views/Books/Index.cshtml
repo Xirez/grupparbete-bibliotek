@@ -4,14 +4,14 @@
     ViewData["Title"] = "Index";
 }
 <div>
-    <h2>Books</h2>
-    <a asp-action="Index" class="btn btn-primary">All</a>
-    <a asp-action="Available" class="btn btn-primary">Available</a>
+    <h2>Böcker</h2>
+    <a asp-action="Index" class="btn btn-primary">Alla</a>
+    <a asp-action="Available" class="btn btn-primary">Tillgängliga</a>
     <form asp-action="FilterOnAuthor" class="form-inline">
         <div class="form-group">
-            <label asp-for="@Model.Author" class="control-label">Filter by author</label>
+            <label asp-for="@Model.Author" class="control-label">Filtrera på författare</label>
             <select asp-for="@Model.Author.ID" asp-items="@Model.Authors" class="form-control"></select>
-            <button type="submit" class="btn btn-primary">Filter</button>
+            <button type="submit" class="btn btn-primary">Filtrera</button>
         </div>
     </form>
 </div>
