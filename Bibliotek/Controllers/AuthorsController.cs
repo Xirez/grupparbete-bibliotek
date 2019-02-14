@@ -66,13 +66,9 @@ namespace Bibliotek.Controllers
 
         public IActionResult FilterOnAuthor(Author author)
         {
-           var firstname = _authorService.GetFirstnameByID(author.ID);
-           var lastname = _authorService.GetLastnameByID(author.ID);
-           var authorBooks = _authorService.GetAuthorBooksByID(author.ID);
-
-            author.FirstName = firstname;
-            author.LastName = lastname;
-            author.AuthorBooks = authorBooks;
+            author.FirstName = _authorService.GetFirstnameByID(author.ID);
+            author.LastName = _authorService.GetLastnameByID(author.ID);
+            author.AuthorBooks = _authorService.GetAuthorBooksByID(author.ID);
 
             return View(author);
         }

@@ -46,7 +46,7 @@
                     </td>
                     <td>
                         @{ int id = Convert.ToInt16(item.Value);}
-                        <a asp-action="Delete" asp-route-id="@id">Delete</a>
+                        <a asp-action="Delete" onclick="Message" asp-route-id="@id">Delete</a>
                     </td>
                 </tr>
             }
